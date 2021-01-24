@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script>
+        function addItem1() {
+            var count = document.getElementById("item1");
+            var increment = parseInt(count.value) + 1;
+            count.value=increment;
+        }
+        function addItem2() {
+            var count = document.getElementById("item2");
+            var increment = parseInt(count.value) + 1;
+            count.value=increment;
+        }
+        function submitOrder() {
+            var count1 = document.getElementById("item1");
+            var count2 = document.getElementById("item2");
+            
+            window.location.href = `/order/${count1.value}/${count2.value}`;
+        }
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+</head>
+<body class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Breakfast</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Sandwich</h6>
+                        <p class="card-text">Less spicy and tasty</p>
+                        <input type="button" class="btn btn-dark" id="item1" disabled value="0">
+                        <button class="btn btn-primary"  onclick="addItem1()">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Breakfast</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Burger</h6>
+                        <p class="card-text">spicy and cheesy</p>
+                        <input type="button"class="btn btn-dark" id="item2" disabled value="0">
+                        <button class="btn btn-primary"  onclick="addItem2()">Add</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <button onclick="submitOrder()">Order</button>
+</body>
+
+</html>
